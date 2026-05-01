@@ -1,0 +1,34 @@
+.order-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 14px 16px;
+
+    border-top: 1px solid #1f1f1f;
+    text-align: center;
+
+    transition: 0.2s ease;
+}
+
+.order-row:hover {
+    background: #1a1a1a;
+}
+
+.profit {
+    color: #00e676;
+    font-weight: bold;
+}
+
+.loss {
+    color: #ff5252;
+    font-weight: bold;
+}
+
+.profit {
+    color: #00e676;
+    font-weight: bold;
+}
+
+.loss {
+    color: #ff5252;
+    font-weight: bold;
+}

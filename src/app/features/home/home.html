@@ -1,0 +1,19 @@
+<div class="stock-container">
+  <div class="header">
+    <h2>Market Watch</h2>
+  </div>
+
+  <div class="list-wrapper">
+    <cdk-virtual-scroll-viewport itemSize="60" class="stock-list">
+      <div
+        *cdkVirtualFor="let stock of stocks(); trackBy: trackBySymbol"
+        (click)="goToStock(stock.symbol)"
+        class="stock-row"
+        [ngClass]="getPriceClass(stock)"
+      >
+        <div class="symbol">{{ stock.symbol }}</div>
+        <div class="price">{{ stock.price | number: '1.2-2' }}</div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>

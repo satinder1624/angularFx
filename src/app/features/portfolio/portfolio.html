@@ -1,0 +1,24 @@
+<div class="portfolio">
+  <!-- 🔹 Summary Card -->
+  <div class="summary-card">
+    <div class="label">Total Portfolio Value</div>
+    <div class="value">
+      {{ totalPortfolio() | number: '1.2-2' }}
+    </div>
+  </div>
+
+  <!-- 🔹 Table -->
+  <div class="orders">
+    <div class="order-header">
+      <span>Symbol</span>
+      <span>Qty</span>
+      <span>Buy</span>
+      <span>Current</span>
+      <span>Value</span>
+      <span>P/L</span>
+    </div>
+
+    <app-order-row *ngFor="let order of enrichedOrders(); trackBy: trackBySymbol" [order]="order">
+    </app-order-row>
+  </div>
+</div>

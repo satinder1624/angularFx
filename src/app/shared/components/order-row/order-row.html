@@ -1,0 +1,11 @@
+<div class="order-row">
+  <span>{{ order.symbol }}</span>
+  <span>{{ order.quantity }}</span>
+  <span>{{ order.buyPrice }}</span>
+  <span>{{ order.currentPrice }}</span>
+  <span>{{ order.currentValue | number: '1.2-2' }}</span>
+
+  <span [ngClass]="order.profit >= 0 ? 'profit' : 'loss'">
+    {{ order.profit | number: '1.2-2' }}
+  </span>
+</div>

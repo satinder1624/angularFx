@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 60px;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #0d0d0d;
+    border-bottom: 1px solid #222;
+    color: white;
+
+    z-index: 1000;
+}
+
+/* 🔥 Logo */
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* 🔥 Links */
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #aaa;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+/* active route */
+.links a.active {
+    color: #00e676;
+    border-bottom: 2px solid #00e676;
+    padding-bottom: 4px;
+}
+
+/* hover effect */
+.links a:hover {
+    color: white;
+}
+
+/* 🔥 page spacing (VERY IMPORTANT) */
+.page {
+    padding-top: 60px;
+    /* match nav height */
+    padding-left: 10px;
+    padding-right: 10px;
+
+    background: #0f0f0f;
+    min-height: calc(100vh - 60px);
+    box-sizing: border-box;
+}
+
+.nav {
+    height: 60px;
+    box-sizing: border-box;
+}

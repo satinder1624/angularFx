@@ -1,0 +1,45 @@
+<div class="stock-detail" *ngIf="selectedStock() as stock">
+  <!-- 🔹 Chart -->
+  <div class="chart">
+    <canvas id="chartCanvas"></canvas>
+  </div>
+
+  <div class="timeframe">
+    <button (click)="timeframe.set('1m')" [class.active]="timeframe() === '1m'">1m</button>
+
+    <button (click)="timeframe.set('2m')" [class.active]="timeframe() === '2m'">2m</button>
+
+    <button (click)="timeframe.set('5m')" [class.active]="timeframe() === '5m'">5m</button>
+  </div>
+  <!-- 🔹 Header -->
+  <div class="header">
+    <div class="symbol">{{ stock.symbol }}</div>
+    <div class="price" [ngClass]="getPriceClass(stock)">
+      {{ stock.price | number: '1.2-2' }}
+    </div>
+  </div>
+
+  <!-- 🔹 Order Panel -->
+  <div class="order-panel">
+    <input type="number" min="1" #qty placeholder="Quantity" />
+    <button (click)="buy(stock.symbol, qty.valueAsNumber)">Buy</button>
+  </div>
+
+  <!-- 🔹 History -->
+  <div class="history">
+    <h4>Price History</h4>
+
+    <div class="history-list">
+      <div *ngFor="let item of priceHistory()" class="history-item">
+        <span class="price">
+          {{ item.price | number: '1.2-2' }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- fallback -->
+<div *ngIf="!selectedStock()" class="loading">Loading stock...</div>
+
+<div class="toast" *ngIf="toast()">✅ {{ toast() }}</div>
